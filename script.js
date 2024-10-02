@@ -3,12 +3,12 @@ const card_container=document.getElementById('card-contain');
 
 taskname.addEventListener("keypress",function(event){
     const card=document.getElementById('card').cloneNode(true);
+
+    if(event.key=="Enter"){
     if(taskname.value == " " || taskname.value == ""){
         window.alert("Enter a task");
         return
     }
-
-    if(event.key=="Enter"){
         card.children[0].innerHTML=taskname.value ;
         card_container.appendChild(card);
         document.getElementById('task-name').value=''
